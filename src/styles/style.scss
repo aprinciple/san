@@ -1,0 +1,85 @@
+@import 'helpers/variables';
+@import 'helpers/_mixins';
+@import 'vendor/_libs';
+@import 'base/default';
+
+
+.page {
+  padding-top: 110vh;
+}
+
+.header {
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    outline: 1px solid red;
+
+    @media (min-width: $lg) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__top-item {
+    box-sizing: border-box;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 50px;
+    // padding: 20px;
+    background-color: deepskyblue;
+    font-size: 20px;
+
+    @media (min-width: $lg) {
+      width: 45%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__promo {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin-bottom: 200px;
+    padding: 20px;
+    background-color: lightgreen;
+    font-size: 20px;
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 50px;
+  font-size: 20px;
+
+  &-1 {
+    background-color: deepskyblue;
+  }
+  &-2 {
+    background-color: lightpink;
+  }
+  &-3 {
+    background-color: lightgreen;
+  }
+  &-4 {
+    background-color: tomato;
+  }
+  &-5 {
+    background-color: lightsalmon;
+  }
+
+  @media (min-width: $lg) {
+    width: 50%;
+    height: 300px;
+    margin-bottom: 200px;
+  }
+}
