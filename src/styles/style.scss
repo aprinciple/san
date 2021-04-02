@@ -3,6 +3,18 @@
 @import 'vendor/_libs';
 @import 'base/default';
 
+.san-hide {
+  opacity: 0;
+}
+
+.san-animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+/**
+* Unnecessary styles, only demo
+*/
 
 .page {
   padding-top: 110vh;

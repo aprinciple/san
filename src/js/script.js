@@ -2,8 +2,7 @@
 const san = (opt) => {
   const root = null;
   const once = ( typeof opt.once === 'boolean' ) ? opt.once : true;
-  const threshold = ( opt.threshold >= 0.1 && opt.threshold <= 1 ) ? opt.threshold : 0.5;
-  console.log(once);
+  const threshold = ( opt.threshold >= 0.1 && opt.threshold <= 1 ) ? opt.threshold : 1.0;
 
   const options = {
     root: root,
@@ -18,7 +17,10 @@ const san = (opt) => {
   
       if ( entry.isIntersecting && !item.classList.contains(name) ) {
 
-        name && item.classList.add('animated', name);
+        if (name) {
+          item.classList.add('san-animated', name);
+          item.classList.remove('san-hide');
+        }
 
         if ( Number.isFinite(delay) && (delay > 0.099) ) {
           item.setAttribute('style', `animation-delay: ${delay}s`);
@@ -26,7 +28,8 @@ const san = (opt) => {
 
         once && observer.unobserve(item);
       } else {
-        item.classList.remove(name)
+        item.classList.add('san-hide');
+        !once && item.classList.remove(name);
       }
     });
   }
@@ -37,4 +40,7 @@ const san = (opt) => {
   items.length && items.forEach(item => observer.observe(item));
 }
 
-san();
+san({
+  once: true,
+  threshold: ''
+});

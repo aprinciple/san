@@ -381,6 +381,18 @@ a {
     .container {
       width: 1520px; } }
 
+.san-hide {
+  opacity: 0; }
+
+.san-animated {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+/**
+* Unnecessary styles, only demo
+*/
 .page {
   padding-top: 110vh; }
 
